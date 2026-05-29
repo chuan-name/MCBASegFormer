@@ -10,7 +10,7 @@ Please download the standardized benchmarks from the cloud storage links below a
 * **Deployment Execution:** Unzip the archive and ensure the contents are mapped to `./dataset/TrainDataset/`.
 
 ### 2. Testing Dataset
-* **Download Link:** [Google Drive Link (327.2MB)]
+* **Download Link:** [[Google Drive Link (327.2MB)]](https://drive.google.com/file/d/1Y2z7FD5p5y31vkZwQQomXFRB0HutHyao/view)
 * **Description:** Contains five standard verification benchmarks: **CVC-300** (60 test samples), **CVC-ClinicDB** (62 test samples), **CVC-ColonDB** (380 test samples), **ETIS-LaribPolypDB** (196 test samples), and **Kvasir** (100 test samples).
 * **Deployment Execution:** Unzip the archive and ensure the contents are mapped to `./dataset/TestDataset/`.
 

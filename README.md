@@ -4,7 +4,6 @@
 
 To eliminate dependency conflicts and ensure smooth reproduction on an NVIDIA RTX 3060 GPU, we recommend managing your runtime framework via Anaconda. Execute the following commands sequentially to initialize the self-contained environment:
 
-```bash
 # 1. Create and activate the isolated conda sub-environment
 conda create -n mcbaseg python=3.9.13 -y
 conda activate mcbaseg

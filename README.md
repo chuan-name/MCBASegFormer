@@ -1,5 +1,6 @@
 # MCBASegFormer
 ## 📂 Project Directory Structure & Dataset Setup
+```text
 dataset/
 ├── TrainDataset/               # 联合训练数据集 (399.5MB)
 │   ├── CVC-ClinicDB/           # 550 个训练样本
@@ -24,3 +25,5 @@ dataset/
     └── Kvasir/                 # 100 个测试样本
         ├── images/
         └── masks/
+
+```

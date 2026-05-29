@@ -67,7 +67,7 @@ The training hyperparameters and dataset directory pathways are managed natively
 By default, the script looks for the training partition inside `./dataset/TrainDataset/`. Please ensure your data folders are organized correctly according to the topology chart above before launching.
 
 ### 2. Single-GPU Standard Training
-To launch the multi-scale deep supervision optimization flow using our default runtime setup (e.g., Batch Size of 8, Learning Rate of **3e-4**, and 80 Epochs) on a single NVIDIA RTX 3060 GPU, execute the entry script directly from your terminal:
+To launch the multi-scale deep supervision optimization flow using our default runtime setup (e.g., Batch Size of 8, Learning Rate of 0.0003, and 80 Epochs) on a single NVIDIA RTX 3060 GPU, execute the entry script directly from your terminal:
 
 ```bash
 python Train.py

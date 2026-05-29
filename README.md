@@ -80,3 +80,45 @@ If you wish to override the default hardcoded parameters (such as changing the b
 python Train.py --batch_size 4 --epochs 100 --lr 0.0005
 ```
 
+## 🧪 How to Run Testing (Inference & Saliency Map Generation)
+
+The quantitative testing pipeline is driven natively via **`Test.py`**. Unlike traditional sequential testing frameworks, our script is completely automated. It will automatically loop through all five benchmark sub-datasets stored inside `./dataset/TestDataset/` and export the fine-grained, edge-refined prediction masks in one single execution block.
+
+### 1. Default Verification of Network Checkpoint
+By default, the framework searches for your optimized model weights inside the following relative path:
+`./checkpoints/MCBASegFormer/MCBASegFormer.pth`
+
+Please ensure that your trained weight file is named and positioned correctly before launching the evaluation segment.
+
+### 2. Execution of Unified Inference Run
+To generate the binary saliency maps across the entire evaluation horizon (including **Kvasir**, **CVC-ClinicDB**, and the zero-shot unseen generalization benchmarks like **ETIS-LaribPolypDB**), run the script directly from your terminal with zero parameter workload:
+
+```bash
+python Test.py
+```
+
+### 3. Alternative Weight Overriding (Optional Command Argument)
+If you wish to test a specific checkpoint saved in an alternative folder without modifying the underlying Python code, use the `--pth_path` argument flag:
+
+```bash
+python Test.py --pth_path ./your_custom_path/best_model.pth --testsize 352
+```
+
+---
+
+## 📂 Testing Output Layout & Results Verification
+
+Upon completing the automated execution stream, the network exports the predicted segmentation matrices. The script maps the continuous feature projections into normalized outputs via a Sigmoid activation loop, casting the maps into 8-bit binary assets via `imageio`. 
+
+The predicted outcomes are automatically sorted and serialized into the following structured topology:
+
+```text
+results/
+└── MCBASegFormer/
+    ├── CVC-300/                # Contains 60 predicted masks (.png)
+    ├── CVC-ClinicDB/           # Contains 62 predicted masks (.png)
+    ├── CVC-ColonDB/            # Contains 380 predicted masks (.png)
+    ├── ETIS-LaribPolypDB/      # Contains 196 predicted masks (.png)
+    └── Kvasir/                 # Contains 100 predicted masks (.png)
+```
+

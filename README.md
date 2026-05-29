@@ -4,11 +4,11 @@
 
 To eliminate dependency conflicts and ensure smooth reproduction on an NVIDIA RTX 3060 GPU, we recommend managing your runtime framework via Anaconda. Execute the following commands sequentially to initialize the self-contained environment:
 
-# 1. Create and activate the isolated conda sub-environment
+### 1. Create and activate the isolated conda sub-environment
 conda create -n mcbaseg python=3.9.13 -y
 conda activate mcbaseg
 
-# 2. Install PyTorch ecosystem configured with CUDA 12.1 (Production Release)
+### 2. Install PyTorch ecosystem configured with CUDA 12.1 (Production Release)
 pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --extra-index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
 
 ## 📥 Dataset Download & Deployment Guide

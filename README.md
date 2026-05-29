@@ -6,6 +6,7 @@ To eliminate dependency conflicts and ensure smooth reproduction on an NVIDIA RT
 
 ### 1. Create and activate the isolated conda sub-environment
 conda create -n mcbaseg python=3.9.13 -y
+
 conda activate mcbaseg
 
 ### 2. Install PyTorch ecosystem configured with CUDA 12.1 (Production Release)

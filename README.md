@@ -122,3 +122,31 @@ results/
     └── Kvasir/                 # Contains 100 predicted masks (.png)
 ```
 
+## 📊 How to Run Evaluation (Metric Quantitative Benchmarking)
+
+After generating the predicted saliency maps using `Test.py`, the final step is to execute the quantitative benchmark evaluation pipeline via **`predict_score.py`**. 
+
+This script will perform a line-by-line pixel-level comparison against the ground-truth masks, scanning through 256 structural sliding thresholds to compute the exact 13 baseline medical segmentation criteria reported in our manuscript (including mDice, mIoU, Weighted F-measure $F_{\beta}^{\omega}$, Structure Measure $S_{\alpha}$, and Enhanced-alignment Measure $E_{\phi}^{max}$).
+
+### 1. Unified Metrics Calculation
+To calculate the overall quantitative scores and output performance tables over all five benchmarks simultaneously with zero parameter setup, run the evaluation script directly from your terminal:
+
+```bash
+python predict_score.py
+```
+
+### 2. Output Verification & Result Formats
+Once the multi-scale verification loop completes, the script serializes the quantitative milestones in two formats automatically:
+
+* **Terminal Printout:** A formatted tabular layout (via `tabulate`) will instantly display your model's exact scores directly on your console interface.
+* **Persistent CSV Storage:** Individual standalone spreadsheets are generated and saved under the `./results/` folder to hold your permanent metrics logs:
+  ```text
+  results/
+  ├── result_CVC-300.csv
+  ├── result_CVC-ClinicDB.csv
+  ├── result_CVC-ColonDB.csv
+  ├── result_ETIS-LaribPolypDB.csv  
+  └── result_Kvasir.csv
+  ```
+
+

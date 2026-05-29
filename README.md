@@ -59,3 +59,24 @@ dataset/
         └── masks/
 
 ```
+## 🚀 How to Run Training
+
+The training hyperparameters and dataset directory pathways are managed natively via Python's `argparse` control layer inside `Train.py`. 
+
+### 1. Default Directory Matching
+By default, the script looks for the training partition inside `./dataset/TrainDataset/`. Please ensure your data folders are organized correctly according to the topology chart above before launching.
+
+### 2. Single-GPU Standard Training
+To launch the multi-scale deep supervision optimization flow using our default runtime setup (e.g., Batch Size of 8, Learning Rate of **3e-4**, and 80 Epochs) on a single NVIDIA RTX 3060 GPU, execute the entry script directly from your terminal:
+
+```bash
+python Train.py
+```
+
+### 3. Custom Parameter Adjustments (Via Command Line)
+If you wish to override the default hardcoded parameters (such as changing the batch size to fit lower VRAM limits, or altering the training epoch limits) without modifying the Python source code, append the respective argument flags as shown below:
+
+```bash
+python Train.py --batch_size 4 --epochs 100 --lr 0.0005
+```
+

@@ -148,5 +148,3 @@ Once the multi-scale verification loop completes, the script serializes the quan
   ├── result_ETIS-LaribPolypDB.csv  
   └── result_Kvasir.csv
   ```
-
-
